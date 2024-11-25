@@ -16,7 +16,10 @@
 * {
   box-sizing: border-box;
 }
-
+body {
+  overflow: hidden;
+  min-height: 800vh;
+}
 main {
   display: grid;
 
@@ -50,7 +53,11 @@ main {
           var(--VioletBlue),
           var(--PersianBlue)
         );
-
+        opacity: 0;
+        animation-fill-mode: forwards;
+        animation-name: flash;
+        animation-duration: 500ms;
+        animation-delay: 500ms;
         h3 {
           font-size: 15vw;
           font-weight: 800;
@@ -70,6 +77,11 @@ main {
         margin: 1rem auto;
         line-height: 2.1rem;
       }
+      h2,
+      p {
+        animation-name: fadeInDown;
+        animation-duration: 400ms;
+      }
     }
     &:nth-child(2) {
       h1 {
@@ -86,6 +98,9 @@ main {
           gap: 1.5rem;
           padding: 2rem;
           border-radius: 1rem;
+          animation-name: backInLeft;
+          animation-duration: 600ms;
+          animation-delay: 1s;
 
           p {
             &:nth-of-type(1) {
@@ -172,7 +187,7 @@ main {
       grid-template-columns: 1fr 1fr;
       border-radius: 3rem;
       box-shadow: 1rem 1rem 3rem 0rem
-        color-mix(in hsl, var(--LightLavender), 50%, transparent);
+        color-mix(in hsl, var(--LightLavender) 50%, transparent);
       overflow: hidden;
       section {
         &:nth-child(1) {
